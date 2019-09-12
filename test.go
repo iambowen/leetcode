@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func f(x int) {
@@ -35,18 +36,5 @@ func main() {
 		fmt.Println("string:", s[i:i+1])
 	}
 
-	var input int
-	fmt.Scanf("%d", &input)
-	reverseInput(input)
-
-}
-
-func reverseInput(input int) {
-	if input < 10 {
-		fmt.Print(input)
-		return
-	} else {
-		reverseInput(input % 10)
-		reverseInput(input / 10)
-	}
+	fmt.Println(len(strconv.Itoa(11111)))
 }
