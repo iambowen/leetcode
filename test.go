@@ -2,39 +2,24 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-func f(x int) {
-	fmt.Printf("f(%d)\n", x+0/x) // panics if x == 0
-	defer fmt.Printf("defer %d\n", x)
-	f(x - 1)
-}
-
 func main() {
-	m := map[string]func(op int) int{}
-	m["single"] = func(op int) int {
-		return op
+	// var x list.List
+	// x.PushBack(1)
+	// x.PushBack(2)
+	// x.PushBack(3)
+	// for e := x.Front(); e != nil; e = e.Next() {
+	// 	fmt.Println(e.Value.(int))
+	// }
+	// var a = []int{1, 2, 3}
+	// a, value := a[0:len(a)-1], a[len(a)-1]
+	// fmt.Println(value)
+	// fmt.Println(a)
+
+	for i, ch := range []byte("abc") {
+		fmt.Println(i, ch)
 	}
-
-	m["double"] = func(op int) int {
-		return op * op
-	}
-
-	m["triple"] = func(op int) int {
-		return op * op * op
-	}
-
-	fmt.Println("single : ", m["single"](2))
-	fmt.Println("double : ", m["double"](2))
-	fmt.Println("triple : ", m["triple"](2))
-
-	s := "hello world"
-	fmt.Println(s[1:2])
-
-	for i := 0; i < len(s); i++ {
-		fmt.Println("string:", s[i:i+1])
-	}
-
-	fmt.Println(len(strconv.Itoa(11111)))
 }
+
+// https://stackoverflow.com/questions/21326109/why-are-lists-used-infrequently-in-go

@@ -39,8 +39,8 @@ func minDepth(root *TreeNode) int {
 				break
 			}
 			if node.Left != nil {
-				nodes = append(nodes, node.Left)
 			}
+				nodes = append(nodes, node.Left)
 			if node.Right != nil {
 				nodes = append(nodes, node.Right)
 			}
